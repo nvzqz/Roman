@@ -26,7 +26,6 @@
 //
 
 private let _pairs: [(String, IntMax)] = [
-    ("M",  1000),
     ("CM", 900),
     ("D",  500),
     ("CD", 400),
@@ -41,18 +40,28 @@ private let _pairs: [(String, IntMax)] = [
     ("I",  1)
 ]
 
+private let _allPairs = [("M",  1000)] + _pairs
+
 extension String {
 
     /// Create a roman numeral string from an integer in its most compact form.
     public init<I: IntegerType>(roman integer: I) {
-        for (numeral, value) in _pairs {
-            let int = integer.toIntMax()
-            if int >= value {
-                self = numeral + String(roman: int - value)
-                return
+        if integer >= 1000 {
+            let values = Repeat(
+                count: Int(integer.toIntMax() / 1000),
+                repeatedValue: "M"
+            )
+            self = values.joinWithSeparator("") + String(roman: integer % 1000)
+        } else {
+            for (numeral, value) in _pairs {
+                let int = integer.toIntMax()
+                if int >= value {
+                    self = numeral + String(roman: int - value)
+                    return
+                }
             }
+            self = ""
         }
-        self = ""
     }
 
 }
