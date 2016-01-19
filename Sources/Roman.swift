@@ -46,15 +46,15 @@ extension String {
 
     /// Create a roman numeral string from an integer in its most compact form.
     public init<I: IntegerType>(roman integer: I) {
-        if integer >= 1000 {
+        let int = integer.toIntMax()
+        if int >= 1000 {
             let values = Repeat(
-                count: Int(integer.toIntMax() / 1000),
+                count: Int(int / 1000),
                 repeatedValue: "M"
             )
             self = values.joinWithSeparator("") + String(roman: integer % 1000)
         } else {
             for (numeral, value) in _pairs {
-                let int = integer.toIntMax()
                 if int >= value {
                     self = numeral + String(roman: int - value)
                     return
