@@ -44,7 +44,7 @@ private let _allPairs = [("M",  1000)] + _pairs
 
 extension String {
 
-    /// Create a roman numeral string from an integer in its most compact form.
+    /// Create a Roman numeral string from an integer in its most compact form.
     public init<I: IntegerType>(roman integer: I) {
         let int = integer.toIntMax()
         if int >= 1000 {
@@ -52,7 +52,7 @@ extension String {
                 count: Int(int / 1000),
                 repeatedValue: "M"
             )
-            self = values.joinWithSeparator("") + String(roman: integer % 1000)
+            self = values.reduce("", combine: +) + String(roman: integer % 1000)
         } else {
             for (numeral, value) in _pairs {
                 if int >= value {
