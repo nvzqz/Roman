@@ -11,7 +11,19 @@
 		524FEC7D1C4E10330090ADBE /* Roman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FEC7B1C4E10330090ADBE /* Roman.swift */; };
 		524FEC7E1C4E10330090ADBE /* Roman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FEC7B1C4E10330090ADBE /* Roman.swift */; };
 		524FEC7F1C4E10330090ADBE /* Roman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FEC7B1C4E10330090ADBE /* Roman.swift */; };
+		524FEC8E1C4F45EE0090ADBE /* Roman.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524FEC4A1C4E0FE70090ADBE /* Roman.framework */; };
+		524FEC9D1C4F465B0090ADBE /* RomanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 524FEC9C1C4F465B0090ADBE /* RomanTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		524FEC8F1C4F45EE0090ADBE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 524FEC3F1C4E0FD80090ADBE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 524FEC491C4E0FE70090ADBE;
+			remoteInfo = "Roman OSX";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		524FEC4A1C4E0FE70090ADBE /* Roman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Roman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +35,9 @@
 		524FEC821C4E11740090ADBE /* Roman.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Roman.playground; sourceTree = "<group>"; };
 		524FEC831C4E117F0090ADBE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		524FEC841C4E11910090ADBE /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		524FEC891C4F45EE0090ADBE /* Roman Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roman Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		524FEC951C4F460A0090ADBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		524FEC9C1C4F465B0090ADBE /* RomanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		524FEC861C4F45EE0090ADBE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524FEC8E1C4F45EE0090ADBE /* Roman.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -62,6 +85,7 @@
 			children = (
 				524FEC7A1C4E10330090ADBE /* Sources */,
 				524FEC801C4E103D0090ADBE /* Support */,
+				524FEC941C4F460A0090ADBE /* Tests */,
 				524FEC4B1C4E0FE70090ADBE /* Products */,
 				524FEC821C4E11740090ADBE /* Roman.playground */,
 				524FEC831C4E117F0090ADBE /* Package.swift */,
@@ -76,6 +100,7 @@
 				524FEC581C4E0FF10090ADBE /* Roman.framework */,
 				524FEC651C4E10030090ADBE /* Roman.framework */,
 				524FEC721C4E100A0090ADBE /* Roman.framework */,
+				524FEC891C4F45EE0090ADBE /* Roman Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +119,15 @@
 				524FEC811C4E103D0090ADBE /* Info.plist */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		524FEC941C4F460A0090ADBE /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				524FEC9C1C4F465B0090ADBE /* RomanTests.swift */,
+				524FEC951C4F460A0090ADBE /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,12 +236,31 @@
 			productReference = 524FEC721C4E100A0090ADBE /* Roman.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		524FEC881C4F45EE0090ADBE /* Roman Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 524FEC911C4F45EE0090ADBE /* Build configuration list for PBXNativeTarget "Roman Tests" */;
+			buildPhases = (
+				524FEC851C4F45EE0090ADBE /* Sources */,
+				524FEC861C4F45EE0090ADBE /* Frameworks */,
+				524FEC871C4F45EE0090ADBE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				524FEC901C4F45EE0090ADBE /* PBXTargetDependency */,
+			);
+			name = "Roman Tests";
+			productName = "Roman Tests";
+			productReference = 524FEC891C4F45EE0090ADBE /* Roman Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		524FEC3F1C4E0FD80090ADBE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					524FEC491C4E0FE70090ADBE = {
@@ -220,6 +273,9 @@
 						CreatedOnToolsVersion = 7.2;
 					};
 					524FEC711C4E100A0090ADBE = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					524FEC881C4F45EE0090ADBE = {
 						CreatedOnToolsVersion = 7.2;
 					};
 				};
@@ -240,6 +296,7 @@
 				524FEC571C4E0FF10090ADBE /* Roman iOS */,
 				524FEC641C4E10030090ADBE /* Roman watchOS */,
 				524FEC711C4E100A0090ADBE /* Roman tvOS */,
+				524FEC881C4F45EE0090ADBE /* Roman Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -267,6 +324,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		524FEC701C4E100A0090ADBE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		524FEC871C4F45EE0090ADBE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,7 +372,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		524FEC851C4F45EE0090ADBE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				524FEC9D1C4F465B0090ADBE /* RomanTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		524FEC901C4F45EE0090ADBE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 524FEC491C4E0FE70090ADBE /* Roman OSX */;
+			targetProxy = 524FEC8F1C4F45EE0090ADBE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		524FEC431C4E0FD80090ADBE /* Debug */ = {
@@ -760,6 +840,96 @@
 			};
 			name = Release;
 		};
+		524FEC921C4F45EE0090ADBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Roman-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		524FEC931C4F45EE0090ADBE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nikolaivazquez.Roman-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -801,6 +971,14 @@
 			buildConfigurations = (
 				524FEC781C4E100A0090ADBE /* Debug */,
 				524FEC791C4E100A0090ADBE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		524FEC911C4F45EE0090ADBE /* Build configuration list for PBXNativeTarget "Roman Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				524FEC921C4F45EE0090ADBE /* Debug */,
+				524FEC931C4F45EE0090ADBE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
