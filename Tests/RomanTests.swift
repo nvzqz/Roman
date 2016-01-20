@@ -27,3 +27,43 @@
 
 import XCTest
 import Roman
+
+class RomanTests: XCTestCase {
+
+    func testNumeralFromInteger() {
+        let examples = [
+            (0,    ""),
+            (1,    "I"),
+            (2,    "II"),
+            (3,    "III"),
+            (4,    "IV"),
+            (5,    "V"),
+            (6,    "VI"),
+            (7,    "VII"),
+            (8,    "VIII"),
+            (9,    "IX"),
+            (10,   "X"),
+            (14,   "XIV"),
+            (15,   "XV"),
+            (19,   "XIX"),
+            (20,   "XX"),
+            (40,   "XL"),
+            (44,   "XLIV"),
+            (50,   "L"),
+            (51,   "LI"),
+            (93,   "XCIII"),
+            (100,  "C"),
+            (150,  "CL"),
+            (320,  "CCCXX"),
+            (500,  "D"),
+            (550,  "DL"),
+            (1000, "M"),
+            (3000, "MMM"),
+            (4124, "MMMMCXXIV")
+        ]
+        for (integer, numeral) in examples {
+            XCTAssertEqual(String(roman: integer), numeral)
+        }
+    }
+
+}
