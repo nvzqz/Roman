@@ -19,8 +19,10 @@
         <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square"
              alt="Carthage">
     </a>
-    <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square"
-         alt="MIT License">
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square"
+             alt="MIT License">
+    </a>
 </p>
 
 <p align="center">
