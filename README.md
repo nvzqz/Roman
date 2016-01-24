@@ -51,3 +51,7 @@ Int(roman: "XYZ")   == nil
 ## License
 
 Roman is released under the [MIT License](https://opensource.org/licenses/MIT).
+
+All assets are released under the Creative Commons [Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/)
+and can be found in the [Assets](https://github.com/nvzqz/Roman/tree/master/Assets)
+folder.
