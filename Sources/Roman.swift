@@ -110,6 +110,16 @@ extension String {
         self = _createFrom(integer)
     }
 
+    /// Create a Roman numeral string from an integer in its most compact form.
+    ///
+    /// Returns `nil` if the integer is `<= 0`.
+    public init?<I: IntegerType>(roman integer: I?) {
+        guard let value = integer.flatMap({ String(roman: $0) }) else {
+            return nil
+        }
+        self = value
+    }
+
 }
 
 extension IntegerType {
@@ -141,7 +151,7 @@ extension IntegerType {
                 if !rest.isEmpty {
                     let partValue = rest.characters.count >= 2
                         ? (pairs[rest[0 ..< 2]] ?? pairs[rest[0 ..< 1]])
-                        : pairs[rest[0 ..< 1]]
+                        :  pairs[rest[0 ..< 1]]
                     guard partValue <= value else {
                         return nil
                     }
