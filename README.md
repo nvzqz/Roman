@@ -25,6 +25,87 @@
 
 Roman numerals in Swift.
 
+## Installation
+
+### Compatibility:
+
+- Platforms:
+    - OS X
+    - iOS
+    - watchOS
+    - tvOS
+    - Linux
+- Language:
+    - Swift 2.1+
+
+### Install Using Swift Package Manager
+The [Swift Package Manager](https://swift.org/package-manager/) is a
+decentralized dependency manager for Swift.
+
+1. Add the project to your `Package.swift`.
+
+    ```swift
+    import PackageDescription
+
+    let package = Package(
+        name: "MyAwesomeProject",
+        dependencies: [
+            .Package(url: "https://github.com/nvzqz/Roman.git",
+                     majorVersion: 1)
+        ]
+    )
+    ```
+
+2. Import the Roman module.
+
+    ```swift
+    import Roman
+    ```
+
+### Install Using CocoaPods
+[CocoaPods](https://cocoapods.org/) is a centralized dependency manager for
+Objective-C and Swift. Go [here](https://guides.cocoapods.org/using/index.html)
+to learn more.
+
+1. Add the project to your [Podfile](https://guides.cocoapods.org/using/the-podfile.html).
+
+    ```ruby
+    use_frameworks!
+
+    pod 'Roman', '~> 1.0'
+    ```
+
+2. Run `pod install` and open the `.xcworkspace` file to launch Xcode.
+
+3. Import the Roman framework.
+
+    ```swift
+    import Roman
+    ```
+
+### Install Using Carthage
+[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency
+manager for Objective-C and Swift.
+
+1. Add the project to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile).
+
+    ```
+    github "nvzqz/Roman"
+    ```
+
+2. Run `carthage update` and follow [the additional steps](https://github.com/Carthage/Carthage#getting-started)
+   in order to add Roman to your project.
+
+3. Import the Roman framework.
+
+    ```swift
+    import Roman
+    ```
+
+### Install Manually
+
+Simply add the `Roman.swift` file into your project.
+
 ## Usage
 
 ### String
@@ -55,7 +136,7 @@ Int(roman: "CdV")  // 405
 
 Roman even supports irregular numerals that don't use a short form.
 
-Each of the following evaluate to `true`:
+Each of the following evaluates to `true`:
 
 ```swift
 Int(roman: "IV") == Int(roman: "IIII")
