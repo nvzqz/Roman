@@ -23,6 +23,13 @@
          alt="MIT License">
 </p>
 
+<p align="center">
+    <a href="#installation">Installation</a>
+  • <a href="#usage">Usage</a>
+  • <a href="#license">License</a>
+  • <a href="https://nvzqz.github.io/Roman/docs/">Documentation</a>
+</p>
+
 Roman numerals in Swift.
 
 ## Installation
