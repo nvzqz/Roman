@@ -1,0 +1,10 @@
+module_name: Roman
+author_name: Nikolai Vazquez
+author_url: https://github.com/nvzqz
+github_url: https://github.com/nvzqz/Roman
+
+copyright: Copyright (c) 2016 [Nikolai Vazquez](https://github.com/nvzqz) under the [MIT License](https://opensource.org/licenses/MIT).
+version: 1.0.0
+
+output: docs
+source_directory: ../Roman
