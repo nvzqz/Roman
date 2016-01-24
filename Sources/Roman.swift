@@ -131,5 +131,13 @@ extension IntegerType {
         }
         self = value
     }
+
+    /// Create an integer from a valid Roman numeral string.
+    public init?(roman numeral: String?) {
+        guard let value = numeral.flatMap({ Self(roman: $0) }) else {
+            return nil
+        }
+        self = value
+    }
     
 }
