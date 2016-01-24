@@ -25,36 +25,45 @@
 //  THE SOFTWARE.
 //
 
-private let _pairs: [(String, IntMax)] = [
-    ("CM", 900),
-    ("D",  500),
-    ("CD", 400),
-    ("C",  100),
-    ("XC", 90),
-    ("L",  50),
-    ("XL", 40),
-    ("X",  10),
-    ("IX", 9),
-    ("V",  5),
-    ("IV", 4),
-    ("I",  1)
-]
+private func _numeralPairs<I: IntegerType>() -> [String: I] {
+    return [
+        "M":  1000,
+        "CM": 900,
+        "D":  500,
+        "CD": 400,
+        "C":  100,
+        "XC": 90,
+        "L":  50,
+        "XL": 40,
+        "X":  10,
+        "IX": 9,
+        "V":  5,
+        "IV": 4,
+        "I":  1
+    ]
+}
 
-private let _allPairs = [("M",  1000)] + _pairs
+private func _orderedPairs<I: IntegerType>() -> [(String, I)] {
+    return _numeralPairs().sort({ $0.1 > $1.1 })
+}
+
+private let _allPairs: [(String, IntMax)] = _orderedPairs()
+
+private let _somePairs = _allPairs.filter({ $0.0 != "M" })
 
 extension String {
 
     /// Create a Roman numeral string from an integer in its most compact form.
+    ///
+    /// If the integer is `<= 0`, an empty string is created.
     public init<I: IntegerType>(roman integer: I) {
         let int = integer.toIntMax()
         if int >= 1000 {
-            let values = Repeat(
-                count: Int(int / 1000),
-                repeatedValue: "M"
-            )
-            self = values.reduce("", combine: +) + String(roman: integer % 1000)
+            let values = Repeat(count: Int(int / 1000), repeatedValue: "M")
+            self = values.reduce("", combine: +)
+                +  String(roman: integer % 1000)
         } else {
-            for (numeral, value) in _pairs {
+            for (numeral, value) in _somePairs {
                 if int >= value {
                     self = numeral + String(roman: int - value)
                     return
