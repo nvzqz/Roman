@@ -86,3 +86,50 @@ extension String {
     }
 
 }
+
+extension IntegerType {
+
+    /// Create an integer from a valid Roman numeral string.
+    public init?(roman numeral: String) {
+
+        guard !numeral.isEmpty else {
+            return nil
+        }
+
+        typealias Integer = Self
+        let pairs: [String: Self] = _numeralPairs()
+
+        func createFrom(numeral: String) -> Integer? {
+            guard !numeral.isEmpty else {
+                return 0
+            }
+            for index in [2, 1] {
+                let count = numeral.characters.count
+                guard index <= count else {
+                    continue
+                }
+                let head = numeral[0 ..< index]
+                guard let value = pairs[head] else {
+                    continue
+                }
+                let rest = numeral[index ..< count]
+                if !rest.isEmpty {
+                    let partValue = rest.characters.count >= 2
+                        ? (pairs[rest[0 ..< 2]] ?? pairs[rest[0 ..< 1]])
+                        : pairs[rest[0 ..< 1]]
+                    guard partValue <= value else {
+                        return nil
+                    }
+                }
+                return _combine(value, createFrom(rest))
+            }
+            return nil
+        }
+
+        guard let value = createFrom(numeral.uppercaseString) else {
+            return nil
+        }
+        self = value
+    }
+    
+}
