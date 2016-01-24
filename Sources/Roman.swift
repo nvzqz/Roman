@@ -25,9 +25,7 @@
 //  THE SOFTWARE.
 //
 
-private let _allPairs: [(String, IntMax)] = _orderedPairs()
-
-private let _somePairs = _allPairs.filter({ $0.0 != "M" })
+private let _pairs: [(String, IntMax)] = _orderedPairs().filter({ $0.0 != "M" })
 
 private func _numeralPairs<I: IntegerType>() -> [String: I] {
     return [
@@ -75,7 +73,7 @@ extension String {
             self = values.reduce("", combine: +)
                 +  String(roman: integer % 1000)
         } else {
-            for (numeral, value) in _somePairs {
+            for (numeral, value) in _pairs {
                 if int >= value {
                     self = numeral + String(roman: int - value)
                     return
