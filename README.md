@@ -30,7 +30,7 @@
   • <a href="https://nvzqz.github.io/Roman/docs/">Documentation</a>
 </p>
 
-Roman numerals in Swift.
+Roman is a Swift framework that allows for seamless Roman numeral conversion.
 
 ## Installation
 
