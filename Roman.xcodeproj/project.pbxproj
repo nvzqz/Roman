@@ -34,7 +34,7 @@
 		524FEC811C4E103D0090ADBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524FEC821C4E11740090ADBE /* Roman.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Roman.playground; sourceTree = "<group>"; };
 		524FEC831C4E117F0090ADBE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		524FEC841C4E11910090ADBE /* LICENSE.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
+		524FEC841C4E11910090ADBE /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		524FEC891C4F45EE0090ADBE /* Roman Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roman Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524FEC951C4F460A0090ADBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524FEC9C1C4F465B0090ADBE /* RomanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanTests.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				524FEC4B1C4E0FE70090ADBE /* Products */,
 				524FEC821C4E11740090ADBE /* Roman.playground */,
 				524FEC831C4E117F0090ADBE /* Package.swift */,
-				524FEC841C4E11910090ADBE /* LICENSE.md */,
+				524FEC841C4E11910090ADBE /* LICENSE.txt */,
 			);
 			sourceTree = "<group>";
 		};
