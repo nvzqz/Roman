@@ -56,6 +56,28 @@ private func _with<T>(first: T?, _ second: T?, combine: (T, T) -> T?) -> T? {
     return combine(first, second)
 }
 
+private func _repeat(string: String, count: Int) -> String {
+    func repeatString(string: String, count: Int) -> String {
+        return Repeat(count: count, repeatedValue: string)
+            .reduce("", combine: +)
+    }
+    let values = [
+        10000,  7000,  5000,  3000,  2000,
+        1000,   700,   500,   300,   200,
+        100,    70,    50,    30,    20,
+        10,     7,     5,     3,     2
+    ]
+    for value in values {
+        if count % value == 0 {
+            return repeatString(
+                repeatString(string, count: value),
+                count: count / value
+            )
+        }
+    }
+    return string + _repeat(string, count: count - 1)
+}
+
 extension String {
 
     private subscript(range: Range<Int>) -> String {
@@ -69,9 +91,8 @@ extension String {
     public init<I: IntegerType>(roman integer: I) {
         let int = integer.toIntMax()
         if int >= 1000 {
-            let values = Repeat(count: Int(int / 1000), repeatedValue: "M")
-            self = values.reduce("", combine: +)
-                +  String(roman: integer % 1000)
+            let values = _repeat("M", count: Int(int / 1000))
+            self = values + String(roman: integer % 1000)
         } else {
             for (numeral, value) in _pairs {
                 if int >= value {
