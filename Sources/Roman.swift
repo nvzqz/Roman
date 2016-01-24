@@ -60,6 +60,11 @@ private func _combine<I: IntegerType>(first: I?, _ second: I?) -> I? {
 
 extension String {
 
+    private subscript(range: Range<Int>) -> String {
+        return self[startIndex.advancedBy(range.startIndex)
+            ..< startIndex.advancedBy(range.endIndex)]
+    }
+
     /// Create a Roman numeral string from an integer in its most compact form.
     ///
     /// If the integer is `<= 0`, an empty string is created.
