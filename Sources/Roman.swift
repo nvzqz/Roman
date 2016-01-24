@@ -49,11 +49,11 @@ private func _orderedPairs<I: IntegerType>() -> [(String, I)] {
     return _numeralPairs().sort({ $0.1 > $1.1 })
 }
 
-private func _combine<I: IntegerType>(first: I?, _ second: I?) -> I? {
-    guard let valueA = first, valueB = second else {
+private func _with<T>(first: T?, _ second: T?, combine: (T, T) -> T?) -> T? {
+    guard let first = first, second = second else {
         return nil
     }
-    return valueA + valueB
+    return combine(first, second)
 }
 
 extension String {
@@ -119,7 +119,7 @@ extension IntegerType {
                         return nil
                     }
                 }
-                return _combine(value, createFrom(rest))
+                return _with(value, createFrom(rest), combine: +)
             }
             return nil
         }
