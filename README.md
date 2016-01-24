@@ -4,6 +4,25 @@
     alt="Roman Banner">
 </p>
 
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-osx%20%7C%20ios%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg?style=flat-square"
+         alt="Platform">
+    <a href="https://swift.org/package-manager">
+        <img src="https://img.shields.io/badge/SPM-compatible-orange.svg?style=flat-square"
+             alt="Swift Package Manager">
+    </a>
+    <a href="https://cocoapods.org/pods/Roman">
+        <img src="https://img.shields.io/cocoapods/v/Roman.svg?style=flat-square"
+             alt="CocoaPods">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square"
+             alt="Carthage">
+    </a>
+    <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square"
+         alt="MIT License">
+</p>
+
 Roman numerals in Swift.
 
 ## Usage
