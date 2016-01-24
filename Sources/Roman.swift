@@ -51,6 +51,13 @@ private let _allPairs: [(String, IntMax)] = _orderedPairs()
 
 private let _somePairs = _allPairs.filter({ $0.0 != "M" })
 
+private func _combine<I: IntegerType>(first: I?, _ second: I?) -> I? {
+    guard let valueA = first, valueB = second else {
+        return nil
+    }
+    return valueA + valueB
+}
+
 extension String {
 
     /// Create a Roman numeral string from an integer in its most compact form.
