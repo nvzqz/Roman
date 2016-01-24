@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Roman  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Roman  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Roman Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/nvzqz/Roman"><img src="img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Roman Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Roman  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/IntegerType.html">IntegerType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p align="center">
+    <img
+    src="https://raw.githubusercontent.com/nvzqz/Roman/master/Assets/banner.png"
+    alt="Roman Banner">
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/platform-osx%20%7C%20ios%20%7C%20watchos%20%7C%20tvos%20%7C%20linux-lightgrey.svg?style=flat-square"
+         alt="Platform">
+    <a href="https://swift.org/package-manager">
+        <img src="https://img.shields.io/badge/SPM-compatible-orange.svg?style=flat-square"
+             alt="Swift Package Manager">
+    </a>
+    <a href="https://cocoapods.org/pods/Roman">
+        <img src="https://img.shields.io/cocoapods/v/Roman.svg?style=flat-square"
+             alt="CocoaPods">
+    </a>
+    <a href="https://github.com/Carthage/Carthage">
+        <img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square"
+             alt="Carthage">
+    </a>
+    <a href="https://opensource.org/licenses/MIT">
+        <img src="https://img.shields.io/badge/license-MIT-000000.svg?style=flat-square"
+             alt="MIT License">
+    </a>
+</p>
+
+<p align="center">
+    <a href="#installation">Installation</a>
+  • <a href="#usage">Usage</a>
+  • <a href="#license">License</a>
+  • <a href="https://nvzqz.github.io/Roman/docs/">Documentation</a>
+</p>
+
+<p>Roman is a Swift framework that allows for seamless Roman numeral conversion.</p>
+<a href='#installation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installation'>Installation</h2>
+<a href='#compatibility' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='compatibility'>Compatibility:</h3>
+
+<ul>
+<li>Platforms:
+
+<ul>
+<li>OS X</li>
+<li>iOS</li>
+<li>watchOS</li>
+<li>tvOS</li>
+<li>Linux</li>
+</ul></li>
+<li>Language:
+
+<ul>
+<li>Swift 2.1+</li>
+</ul></li>
+</ul>
+<a href='#install_using_swift_package_manager' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install_using_swift_package_manager'>Install Using Swift Package Manager</h3>
+
+<p>The <a href="https://swift.org/package-manager/">Swift Package Manager</a> is a
+decentralized dependency manager for Swift.</p>
+
+<ol>
+<li><p>Add the project to your <code>Package.swift</code>.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">PackageDescription</span>
+
+<span class="k">let</span> <span class="nv">package</span> <span class="o">=</span> <span class="kt">Package</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="s">"MyAwesomeProject"</span><span class="p">,</span>
+    <span class="nv">dependencies</span><span class="p">:</span> <span class="p">[</span>
+        <span class="o">.</span><span class="kt">Package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/nvzqz/Roman.git"</span><span class="p">,</span>
+                 <span class="nv">majorVersion</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+</code></pre></li>
+<li><p>Import the Roman module.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Roman</span>
+</code></pre></li>
+</ol>
+<a href='#install_using_cocoapods' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install_using_cocoapods'>Install Using CocoaPods</h3>
+
+<p><a href="https://cocoapods.org/">CocoaPods</a> is a centralized dependency manager for
+Objective-C and Swift. Go <a href="https://guides.cocoapods.org/using/index.html">here</a>
+to learn more.</p>
+
+<ol>
+<li><p>Add the project to your <a href="https://guides.cocoapods.org/using/the-podfile.html">Podfile</a>.</p>
+<pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
+
+<span class="n">pod</span> <span class="s1">'Roman'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+</code></pre></li>
+<li><p>Run <code>pod install</code> and open the <code>.xcworkspace</code> file to launch Xcode.</p></li>
+<li><p>Import the Roman framework.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Roman</span>
+</code></pre></li>
+</ol>
+<a href='#install_using_carthage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install_using_carthage'>Install Using Carthage</h3>
+
+<p><a href="https://github.com/Carthage/Carthage">Carthage</a> is a decentralized dependency
+manager for Objective-C and Swift.</p>
+
+<ol>
+<li><p>Add the project to your <a href="https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile">Cartfile</a>.</p>
+<pre class="highlight plaintext"><code>github "nvzqz/Roman"
+</code></pre></li>
+<li><p>Run <code>carthage update</code> and follow <a href="https://github.com/Carthage/Carthage#getting-started">the additional steps</a>
+in order to add Roman to your project.</p></li>
+<li><p>Import the Roman framework.</p>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">Roman</span>
+</code></pre></li>
+</ol>
+<a href='#install_manually' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='install_manually'>Install Manually</h3>
+
+<p>Simply add the <code>Roman.swift</code> file into your project.</p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<a href='#string' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='string'>String</h3>
+
+<p>A Roman numeral string can be created from an instance of a type that conforms
+to <code>IntegerType</code>.</p>
+<pre class="highlight swift"><code><span class="kt">String</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="mi">1478</span><span class="p">)</span>  <span class="c1">// "MCDLXXVIII"</span>
+<span class="kt">String</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="mi">2743</span><span class="p">)</span>  <span class="c1">// "MMDCCXLIII"</span>
+<span class="kt">String</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="mi">1226</span><span class="p">)</span>  <span class="c1">// "MCCXXVI"</span>
+<span class="kt">String</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="mi">0</span><span class="p">)</span>     <span class="c1">// nil</span>
+<span class="kt">String</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="o">-</span><span class="mi">42</span><span class="p">)</span>   <span class="c1">// nil</span>
+</code></pre>
+<a href='#integertype' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='integertype'>IntegerType</h3>
+
+<p>All types that conform to <code>IntegerType</code> can be initialized from a Roman numeral
+string.</p>
+
+<p>The input string is case insensitive.</p>
+<pre class="highlight swift"><code><span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"III"</span><span class="p">)</span>  <span class="c1">// 3</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"MIV"</span><span class="p">)</span>  <span class="c1">// 1004</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"CdV"</span><span class="p">)</span>  <span class="c1">// 405</span>
+</code></pre>
+
+<p>Roman even supports irregular numerals that don&rsquo;t use a short form.</p>
+
+<p>Each of the following evaluates to <code>true</code>:</p>
+<pre class="highlight swift"><code><span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"IV"</span><span class="p">)</span> <span class="o">==</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"IIII"</span><span class="p">)</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"XX"</span><span class="p">)</span> <span class="o">==</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"VVVV"</span><span class="p">)</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"CD"</span><span class="p">)</span> <span class="o">==</span> <span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"CCCC"</span><span class="p">)</span>
+</code></pre>
+
+<p>Invalid strings return <code>nil</code>.</p>
+<pre class="highlight swift"><code><span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"hello"</span><span class="p">)</span> <span class="o">==</span> <span class="kc">nil</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"IIIXX"</span><span class="p">)</span> <span class="o">==</span> <span class="kc">nil</span>
+<span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"XYZ"</span><span class="p">)</span>   <span class="o">==</span> <span class="kc">nil</span>
+</code></pre>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>Roman is released under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+
+<p>All assets are released under the Creative Commons <a href="https://creativecommons.org/licenses/by-sa/4.0/">Attribution-ShareAlike 4.0 International License</a>
+and can be found in the <a href="https://github.com/nvzqz/Roman/tree/master/Assets">Assets</a>
+folder.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>Copyright (c) 2016 <a class="link" href="https://github.com/nvzqz" target="_blank" rel="external">Nikolai Vazquez</a> under the <a class="link" href="https://opensource.org/licenses/MIT" target="_blank" rel="external">MIT License</a>.</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.5.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
