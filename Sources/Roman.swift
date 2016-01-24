@@ -78,6 +78,21 @@ private func _repeat(string: String, count: Int) -> String {
     return string + _repeat(string, count: count - 1)
 }
 
+private func _createFrom<I: IntegerType>(integer: I) -> String {
+    let int = integer.toIntMax()
+    if int >= 1000 {
+        let values = _repeat("M", count: Int(int / 1000))
+        return values + _createFrom(integer % 1000)
+    } else {
+        for (numeral, value) in _pairs {
+            if int >= value {
+                return numeral + _createFrom(int - value)
+            }
+        }
+        return ""
+    }
+}
+
 extension String {
 
     private subscript(range: Range<Int>) -> String {
@@ -87,21 +102,12 @@ extension String {
 
     /// Create a Roman numeral string from an integer in its most compact form.
     ///
-    /// If the integer is `<= 0`, an empty string is created.
-    public init<I: IntegerType>(roman integer: I) {
-        let int = integer.toIntMax()
-        if int >= 1000 {
-            let values = _repeat("M", count: Int(int / 1000))
-            self = values + String(roman: integer % 1000)
-        } else {
-            for (numeral, value) in _pairs {
-                if int >= value {
-                    self = numeral + String(roman: int - value)
-                    return
-                }
-            }
-            self = ""
+    /// Returns `nil` if the integer is `<= 0`.
+    public init?<I: IntegerType>(roman integer: I) {
+        guard integer > 0 else {
+            return nil
         }
+        self = _createFrom(integer)
     }
 
 }

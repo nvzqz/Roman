@@ -30,8 +30,8 @@ import Roman
 
 class RomanTests: XCTestCase {
 
-    let examples = [
-        (0,    ""),
+    let examples: [(Int, String?)] = [
+        (0,    nil),
         (1,    "I"),
         (2,    "II"),
         (3,    "III"),

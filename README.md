@@ -36,8 +36,8 @@ to `IntegerType`.
 String(roman: 1478)  // "MCDLXXVIII"
 String(roman: 2743)  // "MMDCCXLIII"
 String(roman: 1226)  // "MCCXXVI"
-String(roman: 0)     // ""
-String(roman: -42)   // ""
+String(roman: 0)     // nil
+String(roman: -42)   // nil
 ```
 
 ### IntegerType
