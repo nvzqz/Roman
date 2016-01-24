@@ -176,3 +176,23 @@ extension IntegerType {
     }
     
 }
+
+extension FloatingPointType {
+
+    /// Create an instance from a valid Roman numeral string.
+    public init?(roman numeral: String) {
+        guard let value = Int(roman: numeral).flatMap({ Self($0) }) else {
+            return nil
+        }
+        self = value
+    }
+
+    /// Create an instance from a valid Roman numeral string.
+    public init?(roman numeral: String?) {
+        guard let value = numeral.flatMap({ Self(roman: $0) }) else {
+            return nil
+        }
+        self = value
+    }
+
+}

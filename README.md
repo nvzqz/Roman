@@ -161,6 +161,13 @@ Int(roman: "IIIXX") == nil
 Int(roman: "XYZ")   == nil
 ```
 
+### FloatingPointType
+
+All types that conform to `FloatingPointType` can be initialized from a Roman
+numeral string.
+
+Creating instances from Roman numerals works the same way as with `IntegerType`.
+
 ## License
 
 Roman is released under the [MIT License](https://opensource.org/licenses/MIT).
