@@ -25,6 +25,10 @@
 //  THE SOFTWARE.
 //
 
+private let _allPairs: [(String, IntMax)] = _orderedPairs()
+
+private let _somePairs = _allPairs.filter({ $0.0 != "M" })
+
 private func _numeralPairs<I: IntegerType>() -> [String: I] {
     return [
         "M":  1000,
@@ -46,10 +50,6 @@ private func _numeralPairs<I: IntegerType>() -> [String: I] {
 private func _orderedPairs<I: IntegerType>() -> [(String, I)] {
     return _numeralPairs().sort({ $0.1 > $1.1 })
 }
-
-private let _allPairs: [(String, IntMax)] = _orderedPairs()
-
-private let _somePairs = _allPairs.filter({ $0.0 != "M" })
 
 private func _combine<I: IntegerType>(first: I?, _ second: I?) -> I? {
     guard let valueA = first, valueB = second else {
