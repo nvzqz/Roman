@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name                      = "Roman"
-    s.version                   = "1.0.0"
+    s.version                   = "1.1.0"
     s.summary                   = "Seamless Roman numeral conversion in Swift."
     s.homepage                  = "https://github.com/nvzqz/Roman"
     s.license                   = { :type => "MIT", :file => "LICENSE.txt" }

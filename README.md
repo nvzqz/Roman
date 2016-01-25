@@ -81,7 +81,7 @@ to learn more.
     ```ruby
     use_frameworks!
 
-    pod 'Roman', '~> 1.0'
+    pod 'Roman', '~> 1.1.0'
     ```
 
 2. Run `pod install` and open the `.xcworkspace` file to launch Xcode.
