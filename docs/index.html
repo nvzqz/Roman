@@ -31,6 +31,9 @@
             <a href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="Extensions/FloatingPointType.html">FloatingPointType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Extensions/IntegerType.html">IntegerType</a>
               </li>
               <li class="nav-group-task">
@@ -129,7 +132,7 @@ to learn more.</p>
 <li><p>Add the project to your <a href="https://guides.cocoapods.org/using/the-podfile.html">Podfile</a>.</p>
 <pre class="highlight ruby"><code><span class="n">use_frameworks!</span>
 
-<span class="n">pod</span> <span class="s1">'Roman'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0'</span>
+<span class="n">pod</span> <span class="s1">'Roman'</span><span class="p">,</span> <span class="s1">'~&gt; 1.1.0'</span>
 </code></pre></li>
 <li><p>Run <code>pod install</code> and open the <code>.xcworkspace</code> file to launch Xcode.</p></li>
 <li><p>Import the Roman framework.</p>
@@ -189,6 +192,12 @@ string.</p>
 <span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"IIIXX"</span><span class="p">)</span> <span class="o">==</span> <span class="kc">nil</span>
 <span class="kt">Int</span><span class="p">(</span><span class="nv">roman</span><span class="p">:</span> <span class="s">"XYZ"</span><span class="p">)</span>   <span class="o">==</span> <span class="kc">nil</span>
 </code></pre>
+<a href='#floatingpointtype' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='floatingpointtype'>FloatingPointType</h3>
+
+<p>All types that conform to <code>FloatingPointType</code> can be initialized from a Roman
+numeral string.</p>
+
+<p>Creating instances from Roman numerals works the same way as with <code>IntegerType</code>.</p>
 <a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
 
 <p>Roman is released under the <a href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
