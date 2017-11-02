@@ -27,7 +27,7 @@
 
 private let _pairs: [(String, IntMax)] = _orderedPairs().filter({ $0.0 != "M" })
 
-private func _numeralPairs<I: IntegerType>() -> [String: I] {
+private func _numeralPairs<I: Integer>() -> [String: I] {
     return [
         "M":  1000,
         "CM": 900,
@@ -45,21 +45,20 @@ private func _numeralPairs<I: IntegerType>() -> [String: I] {
     ]
 }
 
-private func _orderedPairs<I: IntegerType>() -> [(String, I)] {
-    return _numeralPairs().sort({ $0.1 > $1.1 })
+private func _orderedPairs<I: Integer>() -> [(String, I)] {
+    return _numeralPairs().sorted(by: { $0.1 > $1.1 })
 }
 
-private func _with<T>(first: T?, _ second: T?, combine: (T, T) -> T?) -> T? {
-    guard let first = first, second = second else {
+private func _with<T>(_ first: T?, _ second: T?, combine: (T, T) -> T?) -> T? {
+    guard let first = first, let second = second else {
         return nil
     }
     return combine(first, second)
 }
 
-private func _repeat(string: String, count: Int) -> String {
-    func repeatString(string: String, count: Int) -> String {
-        return Repeat(count: count, repeatedValue: string)
-            .reduce("", combine: +)
+private func _repeat(_ string: String, count: Int) -> String {
+    func repeatString(_ string: String, count: Int) -> String {
+        return repeatElement(string, count: count).reduce("", +)
     }
     let values = [
         10000,  7000,  5000,  3000,  2000,
@@ -78,7 +77,7 @@ private func _repeat(string: String, count: Int) -> String {
     return string + _repeat(string, count: count - 1)
 }
 
-private func _createFrom<I: IntegerType>(integer: I) -> String {
+private func _createFrom<I: Integer>(_ integer: I) -> String {
     let int = integer.toIntMax()
     if int >= 1000 {
         let values = _repeat("M", count: Int(int / 1000))
@@ -95,15 +94,15 @@ private func _createFrom<I: IntegerType>(integer: I) -> String {
 
 extension String {
 
-    private subscript(range: Range<Int>) -> String {
-        return self[startIndex.advancedBy(range.startIndex)
-            ..< startIndex.advancedBy(range.endIndex)]
+    fileprivate subscript(range: Range<Int>) -> String {
+        return self[index(startIndex, offsetBy: range.lowerBound)
+            ..< index(startIndex, offsetBy: range.upperBound)]
     }
 
     /// Create a Roman numeral string from an integer in its most compact form.
     ///
     /// Returns `nil` if the integer is `<= 0`.
-    public init?<I: IntegerType>(roman integer: I) {
+    public init?<I: Integer>(roman integer: I) {
         guard integer > 0 else {
             return nil
         }
@@ -113,7 +112,7 @@ extension String {
     /// Create a Roman numeral string from an integer in its most compact form.
     ///
     /// Returns `nil` if the integer is `<= 0`.
-    public init?<I: IntegerType>(roman integer: I?) {
+    public init?<I: Integer>(roman integer: I?) {
         guard let value = integer.flatMap({ String(roman: $0) }) else {
             return nil
         }
@@ -122,7 +121,7 @@ extension String {
 
 }
 
-extension IntegerType {
+extension Integer {
 
     /// Create an integer from a valid Roman numeral string.
     public init?(roman numeral: String) {
@@ -134,12 +133,12 @@ extension IntegerType {
         typealias Integer = Self
         let pairs: [String: Self] = _numeralPairs()
 
-        func createFrom(numeral: String) -> Integer? {
+        func createFrom(_ numeral: String) -> Integer? {
             guard !numeral.isEmpty else {
                 return 0
             }
             for index in [2, 1] {
-                let count = numeral.characters.count
+                let count = numeral.count
                 guard index <= count else {
                     continue
                 }
@@ -149,10 +148,10 @@ extension IntegerType {
                 }
                 let rest = numeral[index ..< count]
                 if !rest.isEmpty {
-                    let partValue = rest.characters.count >= 2
+                    let partValue = rest.count >= 2
                         ? (pairs[rest[0 ..< 2]] ?? pairs[rest[0 ..< 1]])
                         :  pairs[rest[0 ..< 1]]
-                    guard partValue <= value else {
+                    guard partValue != nil && partValue! <= value else {
                         return nil
                     }
                 }
@@ -161,7 +160,7 @@ extension IntegerType {
             return nil
         }
 
-        guard let value = createFrom(numeral.uppercaseString) else {
+        guard let value = createFrom(numeral.uppercased()) else {
             return nil
         }
         self = value
@@ -177,7 +176,7 @@ extension IntegerType {
     
 }
 
-extension FloatingPointType {
+extension FloatingPoint {
 
     /// Create an instance from a valid Roman numeral string.
     public init?(roman numeral: String) {

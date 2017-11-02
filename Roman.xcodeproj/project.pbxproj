@@ -32,12 +32,12 @@
 		524FEC721C4E100A0090ADBE /* Roman.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Roman.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		524FEC7B1C4E10330090ADBE /* Roman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Roman.swift; sourceTree = "<group>"; };
 		524FEC811C4E103D0090ADBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		524FEC821C4E11740090ADBE /* Roman.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Roman.playground; sourceTree = "<group>"; };
 		524FEC831C4E117F0090ADBE /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		524FEC841C4E11910090ADBE /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		524FEC891C4F45EE0090ADBE /* Roman Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roman Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		524FEC951C4F460A0090ADBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		524FEC9C1C4F465B0090ADBE /* RomanTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RomanTests.swift; sourceTree = "<group>"; };
+		8D2E77EB1FAAB9D4001C0A31 /* Roman.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Roman.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				524FEC801C4E103D0090ADBE /* Support */,
 				524FEC941C4F460A0090ADBE /* Tests */,
 				524FEC4B1C4E0FE70090ADBE /* Products */,
-				524FEC821C4E11740090ADBE /* Roman.playground */,
+				8D2E77EB1FAAB9D4001C0A31 /* Roman.playground */,
 				524FEC831C4E117F0090ADBE /* Package.swift */,
 				524FEC841C4E11910090ADBE /* LICENSE.txt */,
 			);
@@ -268,6 +268,7 @@
 					};
 					524FEC571C4E0FF10090ADBE = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0830;
 					};
 					524FEC641C4E10030090ADBE = {
 						CreatedOnToolsVersion = 7.2;
@@ -567,6 +568,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -617,6 +619,7 @@
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
